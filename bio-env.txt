@@ -1,0 +1,21 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+@EXPLICIT
+https://conda.anaconda.org/conda-forge/osx-64/ca-certificates-2020.11.8-h033912b_0.tar.bz2
+https://repo.anaconda.com/pkgs/main/osx-64/libcxx-10.0.0-1.conda
+https://repo.anaconda.com/pkgs/main/osx-64/zlib-1.2.11-h1de35cc_3.conda
+https://repo.anaconda.com/pkgs/main/osx-64/libffi-3.3-hb1e8313_2.conda
+https://repo.anaconda.com/pkgs/main/osx-64/ncurses-6.2-h0a44026_1.conda
+https://repo.anaconda.com/pkgs/main/osx-64/tk-8.6.10-hb0a8c7a_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/libedit-3.1.20191231-h1de35cc_1.conda
+https://repo.anaconda.com/pkgs/main/osx-64/readline-8.0-h1de35cc_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/sqlite-3.33.0-hffcf06c_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/python-2.7.18-h47d645e_1.conda
+https://conda.anaconda.org/conda-forge/noarch/dill-0.3.2-pyh9f0ad1d_0.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/python_abi-2.7-1_cp27m.tar.bz2
+https://repo.anaconda.com/pkgs/main/noarch/wheel-0.35.1-py_0.conda
+https://conda.anaconda.org/conda-forge/osx-64/certifi-2019.11.28-py27h8c360ce_1.tar.bz2
+https://conda.anaconda.org/conda-forge/osx-64/multiprocess-0.70.9-py27h89ed719_1.tar.bz2
+https://repo.anaconda.com/pkgs/main/osx-64/setuptools-44.0.0-py27_0.conda
+https://repo.anaconda.com/pkgs/main/osx-64/pip-19.3.1-py27_0.conda
