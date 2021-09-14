@@ -1,17 +1,18 @@
-3D forest QSM project
+# QSM Processing
 
 Creating QSM Models in completed in two parts; Stripping Leaves and Creating QSM Models
 
 This process produced accurate QSM model of Coastal Red Woods compared to known good AGB measurements. Not yet understood if this process works for other tree species.
 
-### Required Programs: 
-	- Matlab
-	- Python
-	- Anaconda (command line) https://docs.anaconda.com/anaconda/install/index.html
+Required Programs:
 
-### Running Leaf Separator
+* Matlab
+* Python 2 & Python 3
+* Anaconda (commandline) [https://docs.anaconda.com/anaconda/install/index.html]()
 
-	#### Activate / Setup Conda Environment
+## Running Leaf Separator
+
+	1. Activate / Setup Conda Environment
 
 	 	Activate conda environment:  conda activate leaf-Envi
 
@@ -27,12 +28,9 @@ This process produced accurate QSM model of Coastal Red Woods compared to known 
 	 	from the command line you can check if the tlseperation module or any other module is installed correctly by launching an inline python shell with the following command: python2.7 
 		Then check for the module with this command: import tlseparation
 		No errors mean it's properly installed
-
-
-
-
-
-	#### Run Separation
+		
+	
+	2. Run Separation
 
 		python2.7 Leaf_Seperator.py
 
@@ -41,18 +39,19 @@ This process produced accurate QSM model of Coastal Red Woods compared to known 
 		An Error can also occur in the leaf separation process. You can attempt to use a different separation function by uncommenting the following line. make sure to comment out the line above
 
 			wood, leaf = tls.scripts.nopath_generic_tree(arr[:, :3])
+			
 
-	#### Sort by Height
+	3. Sort by Height
 		Using your own method, sort trees into height categories and place sorted trees into the height_1 - height_3 folders under the Wood_Struture_Trees folder. More height folders can be added as desired. 
 
 
 
-### Running QSM Modeling
+## Running QSM Modeling
 
 
 	based on which tree height class your processing. You'll need to adjust the create_input.m file in /TreeQSM-master/src/ AND update the pth variable in the Run_QSM.m file to the correct height folder
 
-	#### Suggested inputs parameters for create_input.m
+	Suggested inputs parameters for create_input.m
 
 		Small - 2 - 10 meters
 			inputs.PatchDiam1 = [0.020 .03];
