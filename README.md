@@ -12,6 +12,8 @@ Required Programs:
 
 ## Running Leaf Separator
 
+<img src="./img/branch.png" width="220" height="260" />
+
 	1. Activate / Setup Conda Environment
 
 	 	Activate conda environment:  conda activate leaf-Envi
@@ -48,6 +50,7 @@ Required Programs:
 
 ## Running QSM Modeling
 
+<img src="./img/qsm.png" width="220" height="260" />
 
 	based on which tree height class your processing. You'll need to adjust the create_input.m file in /TreeQSM-master/src/ AND update the pth variable in the Run_QSM.m file to the correct height folder
 
