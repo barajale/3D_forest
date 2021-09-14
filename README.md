@@ -1,63 +1,58 @@
-# 3D_forest
+3D forest QSM project
 
-Creating QSM Models in completed in two parts; Stripping Leafs and Creating QSM Models
+Creating QSM Models in completed in two parts; Stripping Leaves and Creating QSM Models
 
 This process produced accurate QSM model of Coastal Red Woods compared to known good AGB measurements. Not yet understood if this process works for other tree species.
 
-
-
-Required Programs: 
+### Required Programs: 
 	- Matlab
 	- Python
 	- Anaconda (command line) https://docs.anaconda.com/anaconda/install/index.html
 
+### Running Leaf Separator
+
+	#### Activate / Setup Conda Environment
+
+	 	Activate conda environment:  conda activate leaf-Envi
+
+	 	If your conda environment has not already been initialized use the following command: conda env create --file bio-env.txt
+	 	This will only work for osx-64 architecture. If you are using a different operating system use the package-list.txt file to install the packages
 
 
-
-*** Running Leaf Seperator ***
-
-	Activate / Setup Conda Enviroment
-
-	 	Activate conda enviroment:  conda activate leaf-Envi
-
-	 	If your conda enviroment has not already been initalized use the following commmand: conda env create --file bio-env.txt
-	 	This will only work for osx-64 architure. If you are using a different operating systems use the package-list.txt file to install the packages
-
-
-	 	Setting up the envoirment to work properly is challenging and tricky
+	 	Setting up the environment to work properly is challenging and tricky
 	 	When installing packages try to only use: conda install [package name]
-	 	some packages were not avaible throught the conda installer so instead you may need to use pip install [package name] for some packages but try to avoid
+	 	some packages were not available through the conda installer so instead you may need to use pip install [package name] for some packages but try to avoid
 
 	 	tip:
-	 	from the command line you can check if the tlseperation module or any other module is install correctly by lauching an inline pythoin shell with the following command: python2.7 
+	 	from the command line you can check if the tlseperation module or any other module is installed correctly by launching an inline python shell with the following command: python2.7 
 		Then check for the module with this command: import tlseparation
-		No errors means it's properly installed
+		No errors mean it's properly installed
 
 
 
 
 
-	Run Seperation
+	#### Run Separation
 
 		python2.7 Leaf_Seperator.py
 
 		Errors could be a result from a package being installed incorrectly. Try the trouble shooting tip in section above. 
 
-		An Error can also occur in the leaf seperation process. You can attempt to use a different seperation function by uncommenting the following line. make sure to comment out the line above
+		An Error can also occur in the leaf separation process. You can attempt to use a different separation function by uncommenting the following line. make sure to comment out the line above
 
 			wood, leaf = tls.scripts.nopath_generic_tree(arr[:, :3])
 
-	Sort by Height
-
-		No good way of sorting unless you have an excel sheet. 
-
-
-*** Running QSM Modeling ***
+	#### Sort by Height
+		Using your own method, sort trees into height categories and place sorted trees into the height_1 - height_3 folders under the Wood_Struture_Trees folder. More height folders can be added as desired. 
 
 
-	based on which tree height class your processing. You'll need to adjust the create_input.m file in /TreeQSM-master/src/
 
-	Suggested inputs parameters for create_input.m
+### Running QSM Modeling
+
+
+	based on which tree height class your processing. You'll need to adjust the create_input.m file in /TreeQSM-master/src/ AND update the pth variable in the Run_QSM.m file to the correct height folder
+
+	#### Suggested inputs parameters for create_input.m
 
 		Small - 2 - 10 meters
 			inputs.PatchDiam1 = [0.020 .03];
@@ -80,10 +75,7 @@ Required Programs:
 			inputs.BallRad1 = inputs.PatchDiam1+0.04; 
 			inputs.BallRad2 = inputs.PatchDiam2Max+0.02;
 
-	 When processing many trees I suggest launching Matlab on the commmandline. Seemed to be more reliable. 
-
-	  
+	 * When processing many trees I suggest launching Matlab on the command line. Seemed to be more reliable.
 
 
-
-
+	 Once Matlab in loaded and configured run the following command to begin the QSM process.

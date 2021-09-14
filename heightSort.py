@@ -1,2 +1,0 @@
-# Height Sort program
-

@@ -8,34 +8,16 @@ clear inputs
 % These CAN BE VARIED AND SHOULD BE OPTIMIZED 
 % (they can have multiple values given as vectors, e.g. [0.01 0.02]).
 % Patch size of the first uniform-size cover:
-%inputs.PatchDiam1 = [0.08 0.12];        % orginal
-%inputs.PatchDiam1 = [0.08];              % test   
-%inputs.PatchDiam1 = [0.1];                 % Pasi
-%inputs.PatchDiam1 = [0.1 0.12];             % alex
-%inputs.PatchDiam1 = [0.02 .03];             % M
-%inputs.PatchDiam1 = [0.045 .08];
-%inputs.PatchDiam1 = [0.060 .08]; % Red woods
+
 inputs.PatchDiam1 = [0.090 .11];
 
 
 % Minimum patch size of the cover sets in the second cover:
-%inputs.PatchDiam2Min = [0.02 0.03];         % orginal
-%inputs.PatchDiam2Min = [0.02];              % test
-%inputs.PatchDiam2Min = [0.03];                % Pasi
-%inputs.PatchDiam2Min = [0.03 0.04];            % alex
-%inputs.PatchDiam2Min = [0.003 .012];     % M
-%inputs.PatchDiam2Min =  [0.0030 .0060 .0090 .012];
-%inputs.PatchDiam2Min =  [0.0080 .0130 .0180 .023];
+
 inputs.PatchDiam2Min =  [0.0110 0.0160 0.0210 0.026];
 
 % Maximum cover set size in the stem's base in the second cover:
-%inputs.PatchDiam2Max = [0.07 0.1];         % orginal
-%inputs.PatchDiam2Max = [0.07];              % test
-%inputs.PatchDiam2Max = [0.06];               % Pasi
-%inputs.PatchDiam2Max = [0.06 0.09];            % alex
-%inputs.PatchDiam2Max = [0.0150 .025];            % M
-%inputs.PatchDiam2Max = [0.0150 .020 .025];
-%inputs.PatchDiam2Max = [0.010 .0150 .02];
+
 inputs.PatchDiam2Max = [0.013 .0180 .05];
 
 
@@ -44,17 +26,11 @@ inputs.PatchDiam2Max = [0.013 .0180 .05];
 % (i.e. little bigger than PatchDiam parameters).
 % Ball radius in the first uniform-size cover generation:
 
-%inputs.BallRad1 = inputs.PatchDiam1+0.015;          % orginal
-%inputs.BallRad1 = 0.12;                               % Pasi
-%inputs.BallRad1 = inputs.PatchDiam1+0.007;          % M
-%inputs.BallRad1 = inputs.PatchDiam1+0.02; 
 inputs.BallRad1 = inputs.PatchDiam1+0.04;
 
+
 % Maximum ball radius in the second cover generation:
-%inputs.BallRad2 = inputs.PatchDiam2Max+0.01;          % orginal
-%inputs.BallRad2 = 0.075;                                 % Pasi
-%inputs.BallRad2 = inputs.PatchDiam2Max+0.003;          % M
-%inputs.BallRad2 = inputs.PatchDiam2Max+0.01;
+
 inputs.BallRad2 = inputs.PatchDiam2Max+0.02;
 
 
