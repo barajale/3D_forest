@@ -10,19 +10,56 @@ Required Programs:
 * Python 2 & Python 3
 * Anaconda (commandline) [https://docs.anaconda.com/anaconda/install/index.html]()
 
+```
+├── Full_Trees
+│   └── completed
+├── Leaf_Seperator.py
+├── QSM_Models
+├── README.md
+├── Run_QSM.m
+├── TreeQSM-master
+│   ├── LICENSE.md
+│   ├── Manual
+│   │   └── TreeQSM_documentation.pdf
+│   ├── README.md
+│   └── src
+│       ├── create_input.m
+│   	 ↓ more 
+├── Wood_Structure_Trees
+│   ├── completed
+│   │   └── c4_tls_p62_tree82_210212.wood.txt
+│   ├── height_1
+│   ├── height_2
+│   └── height_3
+├── bio-env.txt
+├── ignore_test.mat
+├── img
+│   ├── branch.png
+│   └── qsm.png
+├── package-list.txt
+├── temp_qsm_files
+│   ├── P.mat
+│   └── temp.mat
+└── tlseparation
+
+
+```
+
 ## Running Leaf Separator
 
 <img src="./img/branch.png" width="220" height="260" />
 
-	1. Activate / Setup Conda Environment
+1. Activate / Setup Conda Environment
 
-	 	Activate conda environment:  conda activate leaf-Envi
+	 Activate conda environment using the following command
+	 	 
+	> conda activate leaf-Envi
 
-	 	If your conda environment has not already been initialized use the following command: conda env create --file bio-env.txt
+	 If your conda environment has not already been initialized use the following command: conda env create --file bio-env.txt
 	 	This will only work for osx-64 architecture. If you are using a different operating system use the package-list.txt file to install the packages
 
 
-	 	Setting up the environment to work properly is challenging and tricky
+	 Setting up the environment to work properly is challenging and tricky
 	 	When installing packages try to only use: conda install [package name]
 	 	some packages were not available through the conda installer so instead you may need to use pip install [package name] for some packages but try to avoid
 
@@ -32,18 +69,20 @@ Required Programs:
 		No errors mean it's properly installed
 		
 	
-	2. Run Separation
+2. Run Separation
+	
+	Place the individual Point Cloud trees in the “Full_Trees” folder and run the leaf seperating program using the following command after the conda enviroment is launched
+	
+	>python2.7 Leaf_Seperator.py
 
-		python2.7 Leaf_Seperator.py
+	Errors could be a result from a package being installed incorrectly. Try the trouble shooting tip in section above. 
 
-		Errors could be a result from a package being installed incorrectly. Try the trouble shooting tip in section above. 
+	An Error can also occur in the leaf separation process. You can attempt to use a different separation function by uncommenting the following line. make sure to comment out the line above
 
-		An Error can also occur in the leaf separation process. You can attempt to use a different separation function by uncommenting the following line. make sure to comment out the line above
-
-			wood, leaf = tls.scripts.nopath_generic_tree(arr[:, :3])
+	> 	wood, leaf = tls.scripts.nopath_generic_tree(arr[:, :3])
 			
 
-	3. Sort by Height
+3. Sort by Height
 		Using your own method, sort trees into height categories and place sorted trees into the height_1 - height_3 folders under the Wood_Struture_Trees folder. More height folders can be added as desired. 
 
 
@@ -52,7 +91,7 @@ Required Programs:
 
 <img src="./img/qsm.png" width="220" height="260" />
 
-	based on which tree height class your processing. You'll need to adjust the create_input.m file in /TreeQSM-master/src/ AND update the pth variable in the Run_QSM.m file to the correct height folder
+based on which tree height class your processing. You'll need to adjust the create_input.m file in /TreeQSM-master/src/ AND update the pth variable in the Run_QSM.m file to the correct height folder
 
 	Suggested inputs parameters for create_input.m
 
@@ -77,7 +116,8 @@ Required Programs:
 			inputs.BallRad1 = inputs.PatchDiam1+0.04; 
 			inputs.BallRad2 = inputs.PatchDiam2Max+0.02;
 
-	 * When processing many trees I suggest launching Matlab on the command line. Seemed to be more reliable.
+	Tip: When processing many trees I suggest launching Matlab on the command line. Seemed to be more reliable.
 
 
-	 Once Matlab in loaded and configured run the following command to begin the QSM process.
+Once Matlab in loaded and configured run the following command to begin the QSM process.
+>run Run_QSM.m
