@@ -27,7 +27,6 @@ Required Programs:
 │   	 ↓ more 
 ├── Wood_Structure_Trees
 │   ├── completed
-│   │   └── c4_tls_p62_tree82_210212.wood.txt
 │   ├── height_1
 │   ├── height_2
 │   └── height_3
