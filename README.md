@@ -4,11 +4,15 @@ Creating QSM Models in completed in two parts; Stripping Leaves and Creating QSM
 
 This process produced accurate QSM model of Coastal Red Woods compared to known good AGB measurements. Not yet understood if this process works for other tree species.
 
-Required Programs:
+Required Programs / Git Repos :
 
 * Matlab
 * Python 2 & Python 3
 * Anaconda (commandline) [https://docs.anaconda.com/anaconda/install/index.html]()
+* https://github.com/TLSeparation/source
+* https://github.com/InverseTampere/TreeQSM
+
+	The TLSeparation & TreeQSM repo code is already inbedded in this repo, please refer
 
 ```
 ├── Full_Trees
